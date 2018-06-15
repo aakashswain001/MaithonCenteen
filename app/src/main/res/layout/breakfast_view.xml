@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <RelativeLayout
@@ -10,24 +10,37 @@
         android:padding="8dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/breakfast_img"
             android:layout_width="107dp"
             android:layout_height="94dp"
             android:padding="4dp"
             android:background="@drawable/image_border"/>
-
         <TextView
             android:id="@+id/breakfast_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
-            android:layout_toRightOf="@id/imageView"
+            android:layout_toRightOf="@id/breakfast_img"
             android:textStyle="normal"
             android:text="Tea"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             android:textColor="#060606"
             android:textSize="18sp" />
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/veg"
+            android:layout_toRightOf="@+id/breakfast_name"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/veg"
+            />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_toRightOf="@+id/veg"
+            android:layout_marginLeft="9dp"
+            android:background="@drawable/non_veg"
+            />
         <TextView
             android:id="@+id/breakfast_price"
             android:layout_width="wrap_content"
@@ -35,7 +48,7 @@
             android:layout_below="@id/breakfast_name"
             android:layout_marginLeft="18dp"
             android:layout_marginTop="4dp"
-            android:layout_toRightOf="@id/imageView"
+            android:layout_toRightOf="@id/breakfast_img"
             android:text="Rs 10"
             android:textColor="#807c7c"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
@@ -50,7 +63,7 @@
             android:layout_below="@+id/breakfast_price"
             android:layout_marginTop="4dp"
             android:layout_marginLeft="18dp"
-            android:layout_toRightOf="@id/imageView" />
+            android:layout_toRightOf="@id/breakfast_img" />
 
         <Button
             android:layout_height="30dp"
