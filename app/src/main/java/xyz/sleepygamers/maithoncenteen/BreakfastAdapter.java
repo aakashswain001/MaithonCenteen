@@ -37,12 +37,13 @@ public class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
                foodmenu foodmenu= breakfastList.get(position);
-        Glide.with(mCtx)
-                .load(foodmenu.getImg())
-                .into(holder.imageView);
+
 
         holder.name.setText(foodmenu.getName());
         holder.price.setText((CharSequence) foodmenu.getPrice());
+        Glide.with(mCtx)
+                .load(foodmenu.getImg())
+                .into(holder.imageView);
     }
 
     @Override

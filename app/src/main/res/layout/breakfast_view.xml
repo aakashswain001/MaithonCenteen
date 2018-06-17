@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,34 +14,45 @@
             android:id="@+id/breakfast_img"
             android:layout_width="107dp"
             android:layout_height="94dp"
-            android:padding="4dp"
-            android:background="@drawable/image_border"/>
+            android:background="@drawable/image_border"
+            android:padding="4dp" />
+
         <TextView
             android:id="@+id/breakfast_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_toEndOf="@id/breakfast_img"
             android:layout_toRightOf="@id/breakfast_img"
-            android:textStyle="normal"
             android:text="Tea"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             android:textColor="#060606"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
         <ImageView
+            android:id="@+id/veg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/veg"
-            android:layout_toRightOf="@+id/breakfast_name"
             android:layout_marginLeft="25dp"
-            android:background="@drawable/veg"
-            />
+            android:layout_marginStart="25dp"
+            android:layout_toEndOf="@+id/breakfast_name"
+            android:layout_toRightOf="@+id/breakfast_name"
+            android:src="@drawable/veg"
+            android:visibility="gone" />
+
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_toRightOf="@+id/veg"
-            android:layout_marginLeft="9dp"
-            android:background="@drawable/non_veg"
-            />
+            android:id="@+id/nonveg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_toEndOf="@+id/breakfast_name"
+            android:layout_toRightOf="@+id/breakfast_name"
+            android:src="@drawable/veg"
+            android:visibility="gone" />
+
         <TextView
             android:id="@+id/breakfast_price"
             android:layout_width="wrap_content"
@@ -50,30 +62,31 @@
             android:layout_marginTop="4dp"
             android:layout_toRightOf="@id/breakfast_img"
             android:text="Rs 10"
-            android:textColor="#807c7c"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="#807c7c" />
 
         <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
             android:id="@+id/qty_button"
-            app:backGroundColor="@color/colorMint"
-            app:textSize="10sp"
-            app:initialNumber="0"
             android:layout_width="92dp"
-            android:layout_height="27dp"
+            android:layout_height="30dp"
             android:layout_below="@+id/breakfast_price"
-            android:layout_marginTop="4dp"
             android:layout_marginLeft="18dp"
-            android:layout_toRightOf="@id/breakfast_img" />
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@id/breakfast_img"
+            android:visibility="gone"
+            app:backGroundColor="@color/colorMint"
+            app:initialNumber="0" />
 
         <Button
+            android:layout_width="92dp"
             android:layout_height="30dp"
-            android:layout_width="70dp"
             android:layout_below="@+id/breakfast_price"
-            android:layout_toRightOf="@+id/qty_button"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@id/breakfast_img"
+            android:background="@drawable/button"
             android:text="ADD"
-            android:textColor="#75d6a7"
-            android:background="@drawable/button" />
+            android:textColor="#75d6a7" />
 
     </RelativeLayout>
 

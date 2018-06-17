@@ -22,10 +22,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import xyz.sleepygamers.maithoncenteen.models.foodmenu;
+import xyz.sleepygamers.maithoncenteen.utils.MySingleton;
+
+import static xyz.sleepygamers.maithoncenteen.utils.URLs.URL_BREAKFAST;
 
 public class BreakfastActivity extends AppCompatActivity {
 
-    private static final String URL_BREAKFAST = "http://www.sleepygamers.xyz/tatapower/foodmenu.php?apicall=getpics&category=breakfast";
     List<foodmenu> breakfastList;
     RecyclerView recyclerView;
     public BreakfastAdapter BreakfastAdapter;
@@ -39,32 +41,23 @@ public class BreakfastActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
-        breakfastList=new ArrayList<>();
+        breakfastList = new ArrayList<>();
         BreakfastAdapter = new BreakfastAdapter(BreakfastActivity.this, breakfastList);
         recyclerView.setAdapter(BreakfastAdapter);
-
-
-
         loadfood();
     }
-   private void LoadfoodDummy(){
-        for(int i=0;i<10;i++){
-            foodmenu f=new foodmenu(i,"a","12","1");
 
-            breakfastList.add(f);
-        }
-        BreakfastAdapter.notifyDataSetChanged();
-
-    }
-    public void loadfood(){
-        StringRequest stringRequest=new StringRequest(Request.Method.GET, URL_BREAKFAST, new Response.Listener<String>() {
+    public void loadfood() {
+        String urlBreakfast = URL_BREAKFAST.concat("breakfast");
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlBreakfast, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
+                    Toast.makeText(BreakfastActivity.this, "Received", Toast.LENGTH_SHORT).show();
                     JSONObject object = new JSONObject(response);
-                    JSONArray array  = object.getJSONArray("images");
+                    JSONArray array = object.getJSONArray("images");
 
-                    for (int i = 1; i <= array.length(); i++) {
+                    for (int i = 0; i < array.length(); i++) {
                         JSONObject food = array.getJSONObject(i);
                         breakfastList.add(new foodmenu(
                                 food.getInt("id"),
@@ -74,7 +67,8 @@ public class BreakfastActivity extends AppCompatActivity {
                         ));
                     }
                     BreakfastAdapter.notifyDataSetChanged();
-                 } catch (JSONException e) {
+                } catch (JSONException e) {
+                    Toast.makeText(BreakfastActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
 
@@ -83,9 +77,9 @@ public class BreakfastActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
-        Volley.newRequestQueue(this).add(stringRequest);
+        MySingleton.getInstance(this).addToRequestQueue(stringRequest);
     }
 }
