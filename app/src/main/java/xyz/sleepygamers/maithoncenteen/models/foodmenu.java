@@ -4,6 +4,7 @@ public class foodmenu {
     private int id;
     private String name;
     private String price;
+    private String img;
 
     public void setId(int id) {
         this.id = id;
@@ -21,10 +22,10 @@ public class foodmenu {
         this.img = img;
     }
 
-    private String img;
 
 
-    public foodmenu(int id, String name, String category, String price) {
+
+    public foodmenu(int id, String name,  String price,String img) {
         this.id = id;
         this.name = name;
         this.price = price;
