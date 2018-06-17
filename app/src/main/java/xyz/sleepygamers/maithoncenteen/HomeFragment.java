@@ -19,15 +19,23 @@ import xyz.sleepygamers.maithoncenteen.utils.SharedPrefManager;
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     View mView;
-    LinearLayout breakfast;
+    LinearLayout breakfast,lunch,snacks,dinner;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mView = inflater.inflate(R.layout.fragment_home, container, false);
-        breakfast=mView.findViewById(R.id.breakfast);
+        breakfast = mView.findViewById(R.id.breakfast);
+        lunch = mView.findViewById(R.id.lunch);
+        snacks = mView.findViewById(R.id.snacks);
+        dinner = mView.findViewById(R.id.dinner);
+
         breakfast.setOnClickListener(this);
+        lunch.setOnClickListener(this);
+        snacks.setOnClickListener(this);
+        dinner.setOnClickListener(this);
+
         return mView;
     }
 
@@ -41,10 +49,27 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Intent i;
-        switch (v.getId()){
-            case R.id.breakfast:i=new Intent(getContext(), BreakfastActivity.class);
-            startActivity(i);
-            break;
+        switch (v.getId()) {
+            case R.id.breakfast:
+                i = new Intent(getContext(), BreakfastActivity.class);
+                i.putExtra("type", "breakfast");
+                startActivity(i);
+                break;
+            case R.id.lunch:
+                i = new Intent(getContext(), BreakfastActivity.class);
+                i.putExtra("type", "lunch");
+                startActivity(i);
+                break;
+            case R.id.snacks:
+                i = new Intent(getContext(), BreakfastActivity.class);
+                i.putExtra("type", "snacks");
+                startActivity(i);
+                break;
+            case R.id.dinner:
+                i = new Intent(getContext(), BreakfastActivity.class);
+                i.putExtra("type", "dinner");
+                startActivity(i);
+                break;
         }
     }
 }

@@ -1,10 +1,12 @@
 package xyz.sleepygamers.maithoncenteen;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -31,11 +33,15 @@ public class BreakfastActivity extends AppCompatActivity {
     List<foodmenu> breakfastList;
     RecyclerView recyclerView;
     public BreakfastAdapter BreakfastAdapter;
+    String type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breakfast);
+
+        type = getIntent().getStringExtra("type");
+
         recyclerView = findViewById(R.id.recylcerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -48,12 +54,15 @@ public class BreakfastActivity extends AppCompatActivity {
     }
 
     public void loadfood() {
-        String urlBreakfast = URL_BREAKFAST.concat("breakfast");
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+        String urlBreakfast = URL_BREAKFAST.concat(type);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, urlBreakfast, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                progressDialog.dismiss();
                 try {
-                    Toast.makeText(BreakfastActivity.this, "Received", Toast.LENGTH_SHORT).show();
                     JSONObject object = new JSONObject(response);
                     JSONArray array = object.getJSONArray("images");
 
@@ -78,6 +87,7 @@ public class BreakfastActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                        progressDialog.dismiss();
                     }
                 });
         MySingleton.getInstance(this).addToRequestQueue(stringRequest);

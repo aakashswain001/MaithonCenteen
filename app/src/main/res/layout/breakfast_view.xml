@@ -73,7 +73,6 @@
             android:layout_marginLeft="18dp"
             android:layout_marginTop="4dp"
             android:layout_toRightOf="@id/breakfast_img"
-            android:visibility="gone"
             app:backGroundColor="@color/colorMint"
             app:initialNumber="0" />
 
@@ -83,7 +82,7 @@
             android:layout_below="@+id/breakfast_price"
             android:layout_marginLeft="18dp"
             android:layout_marginTop="4dp"
-            android:layout_toRightOf="@id/breakfast_img"
+            android:layout_toRightOf="@id/qty_button"
             android:background="@drawable/button"
             android:text="ADD"
             android:textColor="#75d6a7" />
