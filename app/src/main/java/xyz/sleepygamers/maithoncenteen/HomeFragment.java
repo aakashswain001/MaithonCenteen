@@ -10,8 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import xyz.sleepygamers.maithoncenteen.utils.SharedPrefManager;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,22 +49,22 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         Intent i;
         switch (v.getId()) {
             case R.id.breakfast:
-                i = new Intent(getContext(), BreakfastActivity.class);
+                i = new Intent(getContext(), FoodmenuActivity.class);
                 i.putExtra("type", "breakfast");
                 startActivity(i);
                 break;
             case R.id.lunch:
-                i = new Intent(getContext(), BreakfastActivity.class);
+                i = new Intent(getContext(), FoodmenuActivity.class);
                 i.putExtra("type", "lunch");
                 startActivity(i);
                 break;
             case R.id.snacks:
-                i = new Intent(getContext(), BreakfastActivity.class);
+                i = new Intent(getContext(), FoodmenuActivity.class);
                 i.putExtra("type", "snacks");
                 startActivity(i);
                 break;
             case R.id.dinner:
-                i = new Intent(getContext(), BreakfastActivity.class);
+                i = new Intent(getContext(), FoodmenuActivity.class);
                 i.putExtra("type", "dinner");
                 startActivity(i);
                 break;

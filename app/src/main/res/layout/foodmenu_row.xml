@@ -10,12 +10,6 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <ImageView
-            android:id="@+id/breakfast_img"
-            android:layout_width="107dp"
-            android:layout_height="94dp"
-            android:background="@drawable/image_border"
-            android:padding="4dp" />
 
         <TextView
             android:id="@+id/breakfast_name"
@@ -23,8 +17,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
             android:layout_marginStart="18dp"
-            android:layout_toEndOf="@id/breakfast_img"
-            android:layout_toRightOf="@id/breakfast_img"
             android:text="Tea"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             android:textColor="#060606"
@@ -60,7 +52,6 @@
             android:layout_below="@id/breakfast_name"
             android:layout_marginLeft="18dp"
             android:layout_marginTop="4dp"
-            android:layout_toRightOf="@id/breakfast_img"
             android:text="Rs 10"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             android:textColor="#807c7c" />
@@ -72,11 +63,11 @@
             android:layout_below="@+id/breakfast_price"
             android:layout_marginLeft="18dp"
             android:layout_marginTop="4dp"
-            android:layout_toRightOf="@id/breakfast_img"
             app:backGroundColor="@color/colorMint"
             app:initialNumber="0" />
 
         <Button
+            android:id="@+id/add_to_cart"
             android:layout_width="92dp"
             android:layout_height="30dp"
             android:layout_below="@+id/breakfast_price"

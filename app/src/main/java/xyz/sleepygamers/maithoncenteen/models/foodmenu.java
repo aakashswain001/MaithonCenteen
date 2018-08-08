@@ -1,10 +1,38 @@
 package xyz.sleepygamers.maithoncenteen.models;
 
-public class foodmenu {
+
+import java.io.Serializable;
+
+public class foodmenu implements Serializable {
     private int id;
-    private String name;
-    private String price;
-    private String img;
+    private String name, price, type;
+    private int count;
+    public foodmenu() {
+    }
+
+    public foodmenu(int id, String name, String price, String type) {
+        this.count =0;
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.type = type;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -18,24 +46,10 @@ public class foodmenu {
         this.price = price;
     }
 
-    public void setImg(String img) {
-        this.img = img;
-    }
-
-
-
-
-    public foodmenu(int id, String name,  String price,String img) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.img = img;
-
-    }
-
     public int getId() {
         return id;
     }
+
     public String getName() {
         return name;
     }
@@ -43,9 +57,4 @@ public class foodmenu {
     public String getPrice() {
         return price;
     }
-
-    public String getImg() {
-        return img;
-    }
-
 }
