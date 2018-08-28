@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,13 +50,18 @@ public class FoodmenuAdapter extends RecyclerView.Adapter<FoodmenuAdapter.ViewHo
                 int number = Integer.parseInt(num);
                 int k = foodemnuList.get(position).getCount();
                 foodemnuList.get(position).setCount(number);
-                if (number-k > 0) {
-                    ((AddorRemoveCallbacks) mCtx).onAddProduct( number-k);
-                } else if (number-k < 0)
+                if (number - k > 0) {
+                    ((AddorRemoveCallbacks) mCtx).onAddProduct(number - k);
+                } else if (number - k < 0)
                     ((AddorRemoveCallbacks) mCtx).onRemoveProduct(k - number);
 
             }
         });
+        if(foodmenu.getType().equals("veg")){
+            holder.veg.setVisibility(View.VISIBLE);
+        }else{
+            holder.nonveg.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -67,6 +73,7 @@ public class FoodmenuAdapter extends RecyclerView.Adapter<FoodmenuAdapter.ViewHo
         private TextView name, price;
         private Button addToCart;
         private ElegantNumberButton elegantNumberButton;
+        private ImageView veg, nonveg;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -74,7 +81,8 @@ public class FoodmenuAdapter extends RecyclerView.Adapter<FoodmenuAdapter.ViewHo
             price = itemView.findViewById(R.id.breakfast_price);
             elegantNumberButton = itemView.findViewById(R.id.qty_button);
             addToCart = itemView.findViewById(R.id.add_to_cart);
-
+            veg = itemView.findViewById(R.id.veg);
+            nonveg = itemView.findViewById(R.id.nonveg);
         }
 
     }

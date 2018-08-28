@@ -96,6 +96,7 @@ public class FoodmenuActivity extends AppCompatActivity implements AddorRemoveCa
         }
         Intent intent = new Intent(FoodmenuActivity.this, CheckoutActivity.class);
         intent.putExtra("menuList", checkoutList);
+        intent.putExtra("type",type);
         startActivity(intent);
     }
 

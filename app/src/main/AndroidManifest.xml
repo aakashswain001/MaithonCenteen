@@ -27,7 +27,9 @@
             android:name=".FoodmenuActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/MyTheme" />
-        <activity android:name=".CheckoutActivity"></activity>
+        <activity
+            android:name=".CheckoutActivity"
+            android:theme="@style/MyTheme" />
     </application>
 
 </manifest>

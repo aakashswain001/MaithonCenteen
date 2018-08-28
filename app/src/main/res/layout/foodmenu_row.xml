@@ -32,6 +32,7 @@
             android:layout_toEndOf="@+id/breakfast_name"
             android:layout_toRightOf="@+id/breakfast_name"
             android:src="@drawable/veg"
+            android:background="@drawable/veg_border"
             android:visibility="gone" />
 
         <ImageView
@@ -42,7 +43,8 @@
             android:layout_marginStart="25dp"
             android:layout_toEndOf="@+id/breakfast_name"
             android:layout_toRightOf="@+id/breakfast_name"
-            android:src="@drawable/veg"
+            android:src="@drawable/non_veg"
+            android:background="@drawable/nonveg_border"
             android:visibility="gone" />
 
         <TextView
