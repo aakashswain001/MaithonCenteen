@@ -42,6 +42,10 @@ public class RegisterActivity extends AppCompatActivity {
         editTextRoomNo = findViewById(R.id.editTextRoomNo);
         editTextUid = findViewById(R.id.editTextMaithonId);
 
+        //sending values of user to check out page.
+        Intent intent = new Intent(RegisterActivity.this,CheckoutActivity.class);
+        intent.putExtra("user_id", String.valueOf(editTextUid));
+
         findViewById(R.id.buttonRegister).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,6 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
                 //we will open the login screen
                 finish();
                 startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+
             }
         });
 
