@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//import com.andremion.counterfab.CounterFab;
 import com.andremion.counterfab.CounterFab;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -59,7 +60,7 @@ public class FoodmenuActivity extends AppCompatActivity implements AddorRemoveCa
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //  fab = (FloatingActionButton) findViewById(R.id.fab);
+        //fab = (FloatingActionButton) findViewById(R.id.fab);
 
         type = getIntent().getStringExtra("type");
 

@@ -1,7 +1,7 @@
 package xyz.sleepygamers.maithoncenteen.models;
 
 public class Order {
-    private String order_details, order_date,order_type,status;
+    private String order_details, order_date,order_type,status,delivery_type;
     private int id, user_id,price;
 
 
@@ -67,14 +67,22 @@ public class Order {
     public void setStatus(String status) {
         this.status = status;
     }
+    public String getDelivery_type() {
+        return delivery_type;
+    }
 
-    public Order(int id, int user_id, String order_details, String order_date, int price, String order_type, String status) {
+    public void setDelivery_type(String delivery_type) {
+        this.status = delivery_type;
+    }
+
+    public Order(int id, String order_details, String order_date, int price, String order_type, String delivery_type,String status) {
         this.id = id;
-        this.user_id=user_id;
+        //this.user_id=user_id;
         this.order_details=order_details;
         this.order_date=order_date;
         this.price=price;
         this.order_type=order_type;
+        this.delivery_type=delivery_type;
         this.status=status;
     }
 }

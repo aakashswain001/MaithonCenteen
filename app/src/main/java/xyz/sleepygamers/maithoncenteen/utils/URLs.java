@@ -10,5 +10,7 @@ public class URLs {
     public static final String URL_LOGIN = ROOT_URL + "login.php";
     public static final String GET_FOODMENU = ROOT_URL + "foodmenu.php?apicall=get&category=";
     public static final String URL_ORDER = ROOT_URL + "order.php";
+    public static final String order_show="http://sleepygamers.xyz/tatapower/order.php?apicall=getuserorders&type=all&user_id=";
+
 
 }
