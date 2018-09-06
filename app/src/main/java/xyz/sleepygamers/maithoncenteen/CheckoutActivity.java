@@ -28,13 +28,14 @@ import java.util.Map;
 import xyz.sleepygamers.maithoncenteen.models.Order;
 import xyz.sleepygamers.maithoncenteen.models.foodmenu;
 import xyz.sleepygamers.maithoncenteen.utils.MySingleton;
+import xyz.sleepygamers.maithoncenteen.utils.SharedPrefManager;
 import xyz.sleepygamers.maithoncenteen.utils.URLs;
 
 public class CheckoutActivity extends AppCompatActivity {
     String type;
     RecyclerView recyclerView;
     CheckoutAdapter checkoutAdapter;
-    String date, orderString="",deliveryType;
+    String date, orderString = "", deliveryType;
     int tot_price = 0;
 
     @Override
@@ -126,11 +127,11 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("user_id", Integer.toString(1235));
+                params.put("user_id", SharedPrefManager.getInstance(getApplicationContext()).getUser().getId());
                 params.put("order_details", orderString);
                 params.put("price", Integer.toString(tot_price));
                 params.put("order_type", type);
-                params.put("delivery_type",deliveryType);
+                params.put("delivery_type", deliveryType);
                 return params;
             }
         };
