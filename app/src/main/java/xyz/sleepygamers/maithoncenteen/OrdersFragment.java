@@ -77,15 +77,16 @@ public class OrdersFragment extends Fragment {
     private void showOrder() {
 
         String id = SharedPrefManager.getInstance(getContext()).getUser().getId();
-        String url = URLs.order_show.concat("id");
+        String url = URLs.order_show.concat(id);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
+                            JSONObject object = new JSONObject(response);
                             //converting the string to json array object
-                            JSONArray array = new JSONArray(response);
+                            JSONArray array = object.getJSONArray("orders");
 
                             //traversing through all the object
                             for (int i = 0; i < array.length(); i++) {
