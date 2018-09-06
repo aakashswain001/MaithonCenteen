@@ -12,62 +12,68 @@
         android:layout_centerVertical="true"
         android:orientation="vertical"
         android:padding="10dp">
-
-
-        <EditText
-            android:id="@+id/editTextUsername"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:hint="Username"
-            android:inputType="text" />
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/editTextUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:textColor="@color/colorPrimaryDark"/>
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/editTextEmail"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="Email"
+                android:textColor="@color/colorPrimaryDark"/>
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/editTextPassword"
+
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:fontFamily="sans-serif"
-            android:hint="Password"
-            android:inputType="textPassword" />
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/editTextRoomNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Room No "
+                android:textColor="@color/colorPrimaryDark"/>
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/editTextRoomNo"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:hint="Room No"
-            android:inputType="number" />
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/editTextMaithonId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Maithon Id"
+                android:textColor="@color/colorPrimaryDark"/>
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/editTextMaithonId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:hint="Maithon Id"
-            android:inputType="number" />
-
-
-        <Button
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/buttonRegister"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Register" />
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:padding="12dp"
+            android:text="Register"
+            android:background="@color/colorPrimaryDark"/>
 
         <TextView
             android:id="@+id/textViewLogin"
