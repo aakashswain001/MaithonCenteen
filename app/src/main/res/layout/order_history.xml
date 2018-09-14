@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -10,24 +11,58 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-
+        <TextView
+            android:id="@+id/editOrderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Item:"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            />
         <TextView
             android:id="@+id/order_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Apple 23 2)"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="#000000" />
+            android:layout_toRightOf="@+id/editOrderName"
+            android:text="Apple"
+            android:textColor="#000000"
+            />
+        <TextView
+            android:id="@+id/Editorder_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/order_details"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Date : "
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryText"
+            android:fontFamily="sans-serif"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
         <TextView
             android:id="@+id/order_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/order_details"
+            android:layout_toRightOf="@+id/Editorder_date"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:text="13.3 Inch, 256 GB"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+        <TextView
+            android:id="@+id/Editorder_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/order_date"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Total Price: "
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryText"
+            android:fontFamily="sans-serif"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
         <TextView
@@ -35,6 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/order_date"
+            android:layout_toRightOf="@+id/Editorder_price"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:background="@color/colorPrimary"
@@ -44,23 +80,70 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
             android:textStyle="bold" />
         <TextView
+        android:id="@+id/Editorder_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/price"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Type: "
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryText"
+        android:fontFamily="sans-serif"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+        <TextView
             android:id="@+id/order_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/price"
-            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/Editorder_type"
+            android:layout_marginLeft="2dp"
             android:layout_marginTop="5dp"
-            android:text="13.3 Inch, 256 GB"
+            android:text="veg"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+        <TextView
+            android:id="@+id/Editdelivery_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/order_type"
+            android:layout_marginTop="5dp"
+            android:text="Delivery Type: "
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryText"
+            android:fontFamily="sans-serif"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:layout_toRightOf="@+id/order_type" />
 
         <TextView
             android:id="@+id/delivery_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/order_type"
+            android:layout_below="@+id/price"
+            android:layout_toEndOf="@+id/Editdelivery_type"
+            android:layout_toRightOf="@+id/Editdelivery_type"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
             android:layout_centerHorizontal="true"
-            android:text="13.3 Inch, 256 GB"
+            android:text="Home"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+        <TextView
+            android:id="@+id/Editdelivery_Status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginTop="5dp"
+            android:text="Staus: "
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryText"
+            android:fontFamily="sans-serif"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:layout_toRightOf="@+id/delivery_type"
+            tools:ignore="UnknownId" />
+
 
         <TextView
             android:id="@+id/order_status"
@@ -68,10 +151,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/order_type"
+            android:layout_toRightOf="@+id/Editdelivery_Status"
             android:layout_marginEnd="25dp"
-            android:text="Order status"
+            android:text="pending"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textStyle="bold"
             android:layout_alignParentRight="true"
             android:layout_marginRight="25dp" />
 

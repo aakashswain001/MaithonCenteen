@@ -150,7 +150,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 SharedPrefManager.getInstance(getApplicationContext()).userLogin(user);
 
                                 //starting the profile activity
-                                finish();
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }
                         } catch (JSONException e) {

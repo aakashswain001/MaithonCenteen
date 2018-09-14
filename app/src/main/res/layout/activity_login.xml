@@ -86,7 +86,8 @@
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress"
                         android:hint="Email"
-                        android:textColor="@color/colorPrimaryDark"/>
+                        android:textColorHint="@color/colorPrimaryText"
+                        android:textColor="@color/colorPrimaryText"/>
                 </android.support.design.widget.TextInputLayout>
 
                 <!-- Password Label -->
@@ -100,7 +101,8 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
                         android:hint="Password"
-                        android:textColor="@color/colorPrimaryDark"/>
+                        android:textColorHighlight="@color/colorPrimaryText"
+                        android:textColor="@color/colorPrimaryText"/>
                 </android.support.design.widget.TextInputLayout>
 
                 <Button

@@ -21,7 +21,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Username"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColorHint="@color/colorPrimaryText"
+                android:textColor="@color/colorPrimaryText"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -34,7 +35,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:hint="Email"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColorHint="@color/colorPrimaryText"
+                android:textColor="@color/colorPrimaryText"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -46,7 +48,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="Password"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColorHint="@color/colorPrimaryText"
+                android:textColor="@color/colorPrimaryText"/>
         </android.support.design.widget.TextInputLayout>
 
 
@@ -61,7 +64,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:hint="Room No "
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColorHint="@color/colorPrimaryText"
+                android:textColor="@color/colorPrimaryText"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -74,7 +78,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:hint="Maithon Id"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColorHint="@color/colorPrimaryText"
+                android:textColor="@color/colorPrimaryText"/>
         </android.support.design.widget.TextInputLayout>
 
         <Button
@@ -96,14 +101,15 @@
             android:text="Already Registered?\nLogin Here"
             android:textAlignment="center"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:visibility="gone" />
+
 
 </RelativeLayout>
